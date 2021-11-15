@@ -164,7 +164,6 @@ class TypesOfFood extends React.Component {
 
 #### Render a Class Component to the DOM
 ```javascript
-const JSX = (
 class TypesOfFood extends React.Component {
   constructor(props) {
     super(props);
