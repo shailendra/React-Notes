@@ -61,11 +61,9 @@ const MyComponent = function () {
 }
 
 // using Arrow Function
-const ChildComponent = () => {
+const MyComponent = () => {
   return (
-    <div>
-      <p>I am the child</p>
-    </div>
+    <div> Hello React</div>
   );
 };
 ```
@@ -87,34 +85,6 @@ class Kitten extends React.Component {
     );
   }
 }
-```
-
-<br>
-
-
-#### Component with Composition
-```javascript
-const ChildComponent = () => {
-  return (
-    <div>
-      <p>I am the child</p>
-    </div>
-  );
-};
-
-class ParentComponent extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <div>
-        <h1>I am the parent</h1>
-        <ChildComponent/>
-      </div>
-    );
-  }
-};
 ```
 
 <br>
@@ -202,11 +172,15 @@ class Calendar extends React.Component {
     return (
       <div>
         <h3>What date is it?</h3>
+
+
         <CurrentDate
           user='Shailendra'
           date={Date()}
           colors={['red', 'blue', 'green']}
         />
+
+
       </div>
     );
   }
@@ -220,6 +194,7 @@ class Calendar extends React.Component {
 const Items = (props) => {
   return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
 }
+// Assigning default props
 Items.defaultProps = {
   quantity: 0
 }
@@ -231,7 +206,12 @@ class ShoppingCart extends React.Component {
   render() {
     return (
       <div>
+
+         {/* below will take default props value 0 */}
         <Items />
+
+
+         {/* below will override default props value with 10 */}
         <Items quantity={10} />
       </div>
     )
